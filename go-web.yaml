@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: go-web
-        image: chzbrgr71/go-web
+        image: aishwaryashinde/go-web
         env:
         - name: HOST_PLATFORM
           value: "ACS Kubernetes"
