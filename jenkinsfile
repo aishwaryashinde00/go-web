@@ -1,5 +1,5 @@
 pipeline{
-agent any {
+agent any 
     stages('Stage 1')
     {
         steps{
@@ -18,5 +18,5 @@ sh 'kubectl set image deployment/go-web go-web=$WEB_IMAGE_NAME --kubeconfig /var
         }
     }
     
-}
+
 }
