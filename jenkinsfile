@@ -2,7 +2,7 @@ pipeline{
 agent any 
     stages('Stage 1')
     {
-        steps{
+        steps {
             sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
  sh 'docker build -t $WEB_IMAGE_NAME . '
 sh 'docker login -u aishwaryashinde -p ${DOCKER_HUB}'
@@ -11,7 +11,7 @@ sh 'docker push $WEB_IMAGE_NAME '
     }
     stages('Stage 2')
     {
-        Steps{
+        steps {
            sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
            sh ' create -f ${WORKSPACE}/go-web.yaml || true'
 sh 'kubectl set image deployment/go-web go-web=$WEB_IMAGE_NAME --kubeconfig /var/lib/jenkins/.kube/config'
