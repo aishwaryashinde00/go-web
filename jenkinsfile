@@ -5,7 +5,7 @@ agent any
     {
         steps {
             sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
- sh 'docker build -t aishwaryashinde/go-web:kube29 '
+ sh 'docker build -t aishwaryashinde/go-web:kube30 '
 sh 'docker login -u aishwaryashinde -p ${DOCKER_HUB}'
 sh 'docker push $WEB_IMAGE_NAME '     
 }  
@@ -15,9 +15,9 @@ sh 'docker push $WEB_IMAGE_NAME '
     stage('Deployment')
     {
         steps {
-           sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube29"'
+           sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube30"'
            sh ' create -f ${WORKSPACE}/go-web.yaml || true'
-sh 'kubectl set image deployment/go-web go-web=$WEB_IMAGE_NAME --kubeconfig /var/lib/jenkins/.kube/config'
+sh 'kubectl set image deployment/go-web go-web=aishwaryashinde/go-web:kube30 --kubeconfig /var/lib/jenkins/.kube/config'
              }
     }
 }
