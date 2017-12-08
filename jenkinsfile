@@ -6,7 +6,7 @@ agent any
     steps
     {
     sh'rm -rf go-web'
-    sh 'rmdir go-web'
+    //sh 'rmdir go-web'
     sh'git clone https://github.com/aishwaryashinde00/go-web.git'
   }
      }
