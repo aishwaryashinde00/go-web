@@ -5,8 +5,8 @@ agent any
     {
     steps
     {
-    sh'git clone https://github.com/aishwaryashinde00/go-web-1.git'
-   sh'cd go-web' }
+    sh'git clone https://github.com/aishwaryashinde00/go-web.git'
+  }
      }
             stage('Build')
     {
