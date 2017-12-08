@@ -1,6 +1,13 @@
 pipeline{
 agent any 
     stages {
+    Stage('Cloning')
+    {
+    steps
+    {
+    sh'git clone https://github.com/aishwaryashinde/go-web.git'
+   sh'cd go-web' }
+     }
             stage('Build')
     {
         steps {
