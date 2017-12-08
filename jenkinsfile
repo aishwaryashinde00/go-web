@@ -5,7 +5,7 @@ agent any
     {
         steps {
             sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
- sh 'docker build -t aishwaryashinde/go-web:kube28 .'
+ sh 'docker build -t aishwaryashinde/go-web:kube28 '
 sh 'docker login -u aishwaryashinde -p ${DOCKER_HUB}'
 sh 'docker push $WEB_IMAGE_NAME '     
 }  
