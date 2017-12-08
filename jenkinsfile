@@ -5,7 +5,7 @@ agent any
     {
     steps
     {
-   // sh'rm -rf go-web'
+     sh'rm -rf go-web'
     //sh 'rmdir go-web'
     sh'git clone https://github.com/aishwaryashinde00/go-web.git'
   }
@@ -26,7 +26,7 @@ sh 'docker push aishwaryashinde/go-web:${BUILD_NUMBER} '
         steps {
            sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
            sh ' create -f ${WORKSPACE}/go-web.yaml || true'
-sh 'kubectl set image deployment/go-web go-web=aishwaryashinde/go-web:${BUILD_NUMBER} --kubeconfig /var/lib/jenkins/.kube/config'
+sh 'kubectl set image deployment/go-web go-web=aishwaryashinde/go-web:${BUILD_NUMBER} --kubeconfig var/lib/jenkins/workspace/Pipeline-Example/.kube/config'
              }
     }
 }
