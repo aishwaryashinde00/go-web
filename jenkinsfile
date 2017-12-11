@@ -24,7 +24,7 @@ sh 'docker push aishwaryashinde/go-web:${BUILD_NUMBER} '
     {
         steps {
          script {
-                    env.WEB_IMAGE_NAMEE = "aishwaryashinde/go-web:kube${BUILD_NUMBER}"
+                    env.WEB_IMAGE_NAME = "aishwaryashinde/go-web:kube${BUILD_NUMBER}"
                 }
            sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:kube${BUILD_NUMBER}"'
            sh ' create -f ${WORKSPACE}/go-web.yaml || true'
