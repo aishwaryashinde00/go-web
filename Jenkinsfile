@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Deployment') {
       parallel {
-        stage('Deployment') {
+        stage('Setting web_image_name') {
           steps {
             sh 'WEB_IMAGE_NAME="aishwaryashinde/go-web:${BUILD_NUMBER}"'
           }
