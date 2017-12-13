@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Cloning') {
           steps {
-            sh ' sh\'rm -rf go-web\''
+            sh ' rm -rf go-web'
           }
         }
         stage('Removing older folder') {
