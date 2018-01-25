@@ -1,4 +1,4 @@
-EADME.md 
+README.md 
 i
 
   * Simple golang app to test web containers
