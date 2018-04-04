@@ -11,7 +11,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	var hostPlatform = os.Getenv("HOST_PLATFORM")
 	var backColor = os.Getenv("BACK_COLOR")
 
-	var htmlHeader = "<!DOCTYPE html><html><h2>Azure Container Service</h2>"
+	var htmlHeader = "<!DOCTYPE html><html><h2>Hi ALL</h2>"
 	fmt.Fprintf(w, htmlHeader)
 	fmt.Fprintf(w, "<body style=background-color:%s><p>Running on: %s</p></body></html>", backColor, hostPlatform)
 
